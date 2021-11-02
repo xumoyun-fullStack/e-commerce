@@ -1,0 +1,32 @@
+{
+  "name": "4-oy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xumoyun-fullStack/e-commerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xumoyun-fullStack/e-commerce/issues"
+  },
+  "homepage": "https://github.com/xumoyun-fullStack/e-commerce#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mail": "^0.2.3",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.14"
+  }
+}
