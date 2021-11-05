@@ -8,3 +8,4 @@ module.exports.generateHash = async (pass) => {
 module.exports.compareHash = async (hash, pass) => {
     return await bcrypt.compare(pass, hash);
 }
+
