@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ProductImageScheme = new mongoose.SchemaType({
+const ProductImageScheme = new mongoose.Schema({
     product_image_id: {
         type: String,
         required: true,

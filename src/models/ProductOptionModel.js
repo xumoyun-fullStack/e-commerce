@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ProductOptionScheme = new mongoose.SchemaType({
+const ProductOptionScheme = new mongoose.Schema({
     product_option_id: {
         type: String,
         required: true,

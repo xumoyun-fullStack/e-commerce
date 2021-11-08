@@ -4,10 +4,13 @@ const path = require("path");
 const morgan = require("morgan");
 const CookieParser = require("cookie-parser");
 const { PORT } = require("../config");
+const mongoose = require("./modules/mongo");
 
 const app = express();
 
-app.listen(PORT, () => console.log(`SERVER AT http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`SERVER ready`));
+
+mongoose();
 
 //middlewares
 
@@ -24,7 +27,7 @@ fs.readdir(path.join(__dirname, "routes"), (err, files)=>{
         let routePath = path.join(__dirname, "routes", file);
         let Route = require(routePath);
 
-        if(Route.path && Route.router) app.use(Route.path, Route.router);
+        if(Route.path && Route.router) app.use(`/api${Route.path}`, Route.router);
     })
 
 })

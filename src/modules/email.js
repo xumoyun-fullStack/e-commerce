@@ -3,21 +3,30 @@ const { EMAIL, PASS } = require("../../config");
 
 
 module.exports = async function email(to, subject, text, html){ 
-    const transport = await nodemailer.createTransport({
-        host: "smpt.yandex.ru",
-        port: 465,
-        secure: true,
-        auth: {
-            user: EMAIL,
-            pass: PASS
-        }
-    });
+    try{
+        console.log("begin")
+        const transporter = nodemailer.createTransport({
+            host: 'smtp.mail.ru',
+            port: 465,
+            secure: true,
+            auth: {
+                user: EMAIL,
+                pass: PASS
+            }
+        });
+       
+    
+        return await transporter.sendMail({
+            from: '"Bobajanov Xumoyun", <mailrusender@mail.ru>',
+            to,
+            subject,
+            text,
+            html,
+        })
+        
 
-    return awaittransport.sendmail({
-        from: '"Bobajanov Xumoyun", <xumoyunbobajanov@yandex.com>',
-        to,
-        subject,
-        text,
-        html,
-    })
+        
+    }catch(e){
+        console.log("email", e)
+    }
 }
