@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const CookieParser = require("cookie-parser");
 const { PORT } = require("../config");
 const mongoose = require("./modules/mongo");
+const FileUpload = require("express-fileupload");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
 app.use(CookieParser());
+app.use(FileUpload());
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 //Routes

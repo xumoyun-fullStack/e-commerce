@@ -7,7 +7,7 @@ const OrderItemScheme = new mongoose.Schema({
         unique: true
     },
     product_id: {
-        type: Date,
+        type: String,
         required: true,
     },
     count: {
@@ -21,3 +21,5 @@ const OrderItemScheme = new mongoose.Schema({
 });
 
 const order_items = mongoose.model("order_items", OrderItemScheme);
+
+module.exports = order_items;

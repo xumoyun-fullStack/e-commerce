@@ -4,7 +4,7 @@ const { EMAIL, PASS } = require("../../config");
 
 module.exports = async function email(to, subject, text, html){ 
     try{
-        console.log("begin")
+
         const transporter = nodemailer.createTransport({
             host: 'smtp.mail.ru',
             port: 465,

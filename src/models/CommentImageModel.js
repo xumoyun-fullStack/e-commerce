@@ -1,21 +1,20 @@
 const mongoose = require("mongoose");
 
-const ProductImageScheme = new mongoose.Schema({
-    product_image_id: {
+const CommentImageSchema = new mongoose.Schema({
+    comment_image_id: {
         type: String,
         required: true,
         unique: true
     },
-    image: {
+    comment_id: {
         type: String,
         required: true,
     },
-    product_id: {
+    image:{
         type: String,
         required: true,
     }
 });
 
-const product_images = mongoose.model("product_images", ProductImageScheme);
-
-module.exports = product_images;
+const comment_images = mongoose.model("comment_images", CommentImageSchema);
+module.exports = comment_images;
